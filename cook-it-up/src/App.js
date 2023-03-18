@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import Home from './Home/Home.js';
+import About from './About/About.js';
+import Recipe from './Recipe/Recipe.js';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function App (){
+  const pathname = window.location.pathname;
 
-export default App;
+  let content;
+  if (pathname === '/about') {
+    content = <About />;
+  } else if (pathname === '/recipe') {
+    content = <Recipe />;
+  } else {
+    content = <Home />;
+  }
+  return (
+    <div>
+      <header className="App-header">
+        <h2 className="App-h2">Cook It Up!</h2>
+        <nav>
+          <ul className="App-ul">
+            <li className="App-li"><a className="App-active" href="/">Home</a></li>
+            <li className="App-li"><a href="/about">About</a></li>
+            <li className="App-li"><a href="/recipe">Recipe</a></li>
+          </ul>
+          
+        </nav>
+      </header>
+      <main>
+        {content}
+      </main>
+    </div>
+  )
+}

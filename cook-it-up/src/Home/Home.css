@@ -1,0 +1,23 @@
+.Home {
+  text-align: center; 
+}
+
+
+.MuiButton-root {  /* PDF Button settings */
+  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #e99a2a;
+}
+
+.Home-link {
+  color: #e99a2a;
+}
+
+.MuiInputBase-root { /* change color of after event in search field*/
+border-bottom-color: #e99a2a; 
+} 
+
+.MuiFormControl-root {
+  width: 100vh;
+}
